@@ -37,7 +37,7 @@ public class Tableau extends Stack<Card>{
 		if(this.isEmpty()){
 			if(card.isRoi())return true;
 		}
-		else if(card.isDifferentColor(this.peek()) && card.isNext(this.peek())){
+		else if(card.isDifferentColor(this.peek()) && card.isPrevious(this.peek())){
 			return true;
 		}
 		return false;

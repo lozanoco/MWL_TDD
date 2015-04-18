@@ -21,8 +21,8 @@ public class Card {
 		return true;
 	}
 
-	public boolean isNext(Card topCard) {
-		return this.value == topCard.getValue()+1;
+	public boolean isNext(Card card) {
+		return this.value == card.getValue()+1;
 	}
 
 	public Suit getSuit() {
@@ -47,8 +47,11 @@ public class Card {
 	}
 
 	public boolean isDifferentColor(Card peek) {
-		// TODO Auto-generated method stub
 		return true;
+	}
+
+	public boolean isPrevious(Card card) {
+		return this.value == card.getValue()-1;
 	}
 
 }
