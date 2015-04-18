@@ -195,7 +195,7 @@ public class MoveCardControllerTest {
 		assertEquals(numberWasteCards+1,tableau.size());
 		assertEquals(numberTableauCards-1,waste.size());
 
-		//One score lower card in Waste that tableau (same color)	
+		//One score lower card in Waste that tableau (different color)	
 		card = new Card(5,Suit.CLUBS);
 		waste = new Waste();
 		waste.push(card);		
@@ -209,10 +209,21 @@ public class MoveCardControllerTest {
 		numberWasteCards = waste.size();
 		assertEquals(numberWasteCards+2,tableau.size());
 		assertEquals(numberTableauCards-2,waste.size());
-		
-		
 
-		//One score lower card in Waste that tableau (different color)
+		//One score lower card in Waste that tableau (same color)
+		card = new Card(5,Suit.CLUBS);
+		waste = new Waste();
+		waste.push(card);		
+		tableau = new Tableau();
+		card2 = new Card(6,Suit.CLUBS);
+		tableau.push(card2);
+		assertFalse(waste.isEmpty());		
+		assertFalse(tableau.canPush(card));
+		moveController.move(waste,tableau);	
+		numberTableauCards = tableau.size();
+		numberWasteCards = waste.size();
+		assertEquals(numberWasteCards,tableau.size());
+		assertEquals(numberTableauCards,waste.size());
 		
 
 	}

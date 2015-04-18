@@ -4,6 +4,8 @@ public class Card {
 
 	public static final int MIN_VALUE = 1;
 	public static final int MAX_VALUE = 13;
+	public static final Suit[] BLACK_SUITES = {Suit.CLUBS, Suit.SPADES};
+	public static final Suit[] RED_SUITES = {Suit.HEARTS, Suit.DIAMONDS};
 	private Suit suit;
 	private int value;
 
@@ -46,8 +48,12 @@ public class Card {
 		return this.value == 13;
 	}
 
-	public boolean isDifferentColor(Card peek) {
-		return true;
+	public boolean isDifferentColor(Card card) {
+		if((card.suit.equals(Suit.CLUBS) || card.suit.equals(Suit.SPADES)) 
+				&& (this.suit.equals(Suit.HEARTS)||this.suit.equals(Suit.DIAMONDS))) return true;
+		if((card.suit.equals(Suit.HEARTS) ||card.suit.equals(Suit.DIAMONDS)) 
+				&& (this.suit.equals(Suit.CLUBS)||this.suit.equals(Suit.CLUBS))) return true;
+		return false;
 	}
 
 	public boolean isPrevious(Card card) {
