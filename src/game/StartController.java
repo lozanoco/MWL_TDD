@@ -21,4 +21,16 @@ public class StartController {
 		return foundations;
 	}
 
+	public ArrayList<Tableau> getTableaus() {
+		ArrayList<Tableau> tableaus = new ArrayList<Tableau>();
+		tableaus.add(new Tableau());
+		tableaus.add(new Tableau());
+		tableaus.add(new Tableau());
+		tableaus.add(new Tableau());
+		tableaus.add(new Tableau());
+		tableaus.add(new Tableau());
+		tableaus.add(new Tableau());
+		return tableaus;
+	}
+
 }

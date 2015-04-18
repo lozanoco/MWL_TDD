@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import game.Foundation;
 import game.StartController;
+import game.Tableau;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -45,6 +46,14 @@ public class StartControllerTest {
     
     @Test
     public void getTableauTest() {
+    	Tableau tableau;
+    	ArrayList<Tableau> tableaus = startController.getTableaus();
+    	assertEquals(7, tableaus.size());
+    	for(int i=0; i< tableaus.size();i++){
+    		tableau=tableaus.get(i);
+    		assertFalse(tableau.isFirstCardCovered());
+    		assertTrue(tableau.isSecondAndRestCardsCovered());
+    		}
     	
 		}
 	
