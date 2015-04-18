@@ -1,6 +1,10 @@
 package test;
 
 import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+
+import game.Foundation;
 import game.StartController;
 
 import org.junit.Before;
@@ -23,13 +27,19 @@ public class StartControllerTest {
     
     @Test
     public void getSizeWasteTest() {
-    	assertEquals(24, startController.sizWaste());
+    	assertEquals(0, startController.sizWaste());
     }
     
     
     @Test
     public void getFoundationsTest() {
-
+    	Foundation foundation;
+    	ArrayList<Foundation> foundations = startController.getFoundations();
+    	assertEquals(4, foundations.size());
+    	for(int i=0; i< foundations.size();i++){
+    		foundation=foundations.get(i);
+    		assertEquals(0,foundation.getCardsNumber());
+    		}
     }
     
     
