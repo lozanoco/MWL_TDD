@@ -1,9 +1,8 @@
 package test;
 
 import static org.junit.Assert.*;
-
-
 import game.Card;
+import game.Deck;
 import game.Foundation;
 import game.MoveCardController;
 import game.Suit;
@@ -58,7 +57,7 @@ public class MoveCardControllerTest {
 		waste.push(card);		
 		foundation = new Foundation(Suit.CLUBS);	
 		moveController.move(waste,foundation);
-		
+
 		card = new Card(5,Suit.CLUBS);
 		waste.push(card);		
 		assertFalse(waste.isEmpty());
@@ -75,7 +74,7 @@ public class MoveCardControllerTest {
 		waste.push(card);		
 		foundation = new Foundation(Suit.CLUBS);		
 		moveController.move(waste,foundation);
-		
+
 		card = new Card(2,Suit.DIAMONDS);
 		waste.push(card);		
 		assertFalse(waste.isEmpty());
@@ -90,6 +89,34 @@ public class MoveCardControllerTest {
 
 	@Test
 	public void moveFromDeckToWasteTest(){
+		
+		//All cards in Deck, no cards in Waste
+		
+
+		//All cards in Waste, no cards in Deck
+
+
+		//One card in Deck
+		Card card = new Card(1,Suit.CLUBS);
+		Deck deck = new Deck();
+		deck.push(card);		
+		Waste waste = new Waste();			
+		int numberDeckCards = deck.size();
+		int numberWasteCards = waste.size();			
+		assertFalse(deck.isEmpty());		
+		moveController.move(deck,waste);		
+		assertEquals(numberDeckCards-1,deck.size());
+		assertEquals(numberWasteCards+1,waste.size());
+		assertEquals(card,waste.peek());
+
+
+		//Two cards in Deck, rest in Waste
+
+
+		//Three cards in Deck, rest in Waste
+
+
+		//More than Three cards in Deck, rest in Waste		
 
 
 

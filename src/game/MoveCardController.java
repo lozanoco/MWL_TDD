@@ -6,4 +6,8 @@ public class MoveCardController {
 		foundation.push(waste.pop());	
 	}
 
+	public void move(Deck deck, Waste waste) {
+		waste.push(deck.pop());
+	}
+
 }
