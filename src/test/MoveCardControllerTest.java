@@ -90,10 +90,10 @@ public class MoveCardControllerTest {
 	@Test
 	public void moveFromDeckToWasteTest(){
 		
-		//All cards in Deck, no cards in Waste
+		//No cards in Waste
 		
 
-		//All cards in Waste, no cards in Deck
+		//No cards in Deck
 
 
 		//One card in Deck
@@ -103,20 +103,40 @@ public class MoveCardControllerTest {
 		Waste waste = new Waste();			
 		int numberDeckCards = deck.size();
 		int numberWasteCards = waste.size();			
-		assertFalse(deck.isEmpty());		
+		assertFalse(deck.isEmpty());	
+		assertTrue(deck.canPop(1));	
 		moveController.move(deck,waste);		
 		assertEquals(numberDeckCards-1,deck.size());
 		assertEquals(numberWasteCards+1,waste.size());
 		assertEquals(card,waste.peek());
 
 
-		//Two cards in Deck, rest in Waste
+		//Two cards in Deck
+		deck = new Deck();
+		card = new Card(1,Suit.CLUBS);
+		deck.push(card);	
+		Card card2 = new Card(1,Suit.CLUBS);
+		deck.push(card2);
+		waste = new Waste();			
+		numberDeckCards = deck.size();
+		numberWasteCards = waste.size();			
+		assertFalse(deck.isEmpty());	
+		assertTrue(deck.canPop(1));	
+		moveController.move(deck,waste);		
+		assertEquals(numberDeckCards-1,deck.size());
+		assertEquals(numberWasteCards+1,waste.size());
+		assertEquals(card2,waste.peek());
+
+		numberDeckCards = deck.size();
+		numberWasteCards = waste.size();
+		assertFalse(deck.isEmpty());	
+		moveController.move(deck,waste);		
+		assertEquals(numberDeckCards-1,deck.size());
+		assertEquals(numberWasteCards+1,waste.size());
+		assertEquals(card,waste.peek());
 
 
-		//Three cards in Deck, rest in Waste
-
-
-		//More than Three cards in Deck, rest in Waste		
+		//Three cards in Deck
 
 
 

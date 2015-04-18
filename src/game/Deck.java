@@ -10,4 +10,9 @@ public class Deck extends Stack<Card>{
 		return this.size()==0;
 	}
 
+	public boolean canPop(int number) {
+		if(number<=3)return true;		
+		return false;
+	}
+
 }
