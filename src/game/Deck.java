@@ -11,7 +11,7 @@ public class Deck extends Stack<Card>{
 	}
 
 	public boolean canPop(int number) {
-		if(number<=3)return true;		
+		if(number > 0 && number <= 3)return true;		
 		return false;
 	}
 
