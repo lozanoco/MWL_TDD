@@ -2,7 +2,10 @@ package game;
 
 import java.util.Stack;
 
-public class Tableau {
+
+public class Tableau extends Stack<Card>{
+
+	private static final long serialVersionUID = 9080665846640002421L;
 	
 	private int size;
 	
@@ -29,5 +32,16 @@ public class Tableau {
 	public void setSize(int size) {
 		this.size = size;
 	}
+
+	public boolean canPush(Card card) {
+		if(this.isEmpty()){
+			if(card.isRoi())return true;
+		}
+		else if(card.isDifferentColor(this.peek()) && card.isNext(this.peek())){
+			return true;
+		}
+		return false;
+	}
+
 
 }

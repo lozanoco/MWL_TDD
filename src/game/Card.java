@@ -41,4 +41,14 @@ public class Card {
 		this.value = value;
 	}
 
+	public boolean isRoi() {
+		// TODO Auto-generated method stub
+		return this.value == 13;
+	}
+
+	public boolean isDifferentColor(Card peek) {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
 }

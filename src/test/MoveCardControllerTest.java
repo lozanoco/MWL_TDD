@@ -6,6 +6,7 @@ import game.Deck;
 import game.Foundation;
 import game.MoveCardController;
 import game.Suit;
+import game.Tableau;
 import game.Waste;
 
 import org.junit.Before;
@@ -89,7 +90,7 @@ public class MoveCardControllerTest {
 
 	@Test
 	public void moveFromDeckToWasteTest(){
-		
+
 		//One card in Deck
 		Card card = new Card(1,Suit.CLUBS);
 		Deck deck = new Deck();
@@ -155,7 +156,7 @@ public class MoveCardControllerTest {
 		assertEquals(numberDeckCards-1,deck.size());
 		assertEquals(numberWasteCards+1,waste.size());
 		assertEquals(card2,waste.peek());
-		
+
 		numberDeckCards = deck.size();
 		numberWasteCards = waste.size();
 		assertFalse(deck.isEmpty());	
@@ -163,15 +164,42 @@ public class MoveCardControllerTest {
 		assertEquals(numberDeckCards-1,deck.size());
 		assertEquals(numberWasteCards+1,waste.size());
 		assertEquals(card,waste.peek());
-
-
 	}
 
 	@Test
 	public void moveFromWasteToTableauTest(){
+		
+		//No cards in Tableau, score card different to ROI in Waste
+		Card card = new Card(1,Suit.CLUBS);
+		Waste waste = new Waste();
+		waste.push(card);		
+		Tableau tableau = new Tableau();
+		assertFalse(waste.isEmpty());		
+		assertFalse(tableau.canPush(card));
+		moveController.move(waste,tableau);	
+		int numberTableauCards = tableau.size();
+		int numberWasteCards = waste.size();
+		assertEquals(numberWasteCards-1,tableau.size());
+		assertEquals(numberTableauCards+1,waste.size());
 
+		//No cards in Tableau,  card ROI in Waste
+		card = new Card(13,Suit.CLUBS);
+		waste = new Waste();
+		waste.push(card);		
+		tableau = new Tableau();
+		assertFalse(waste.isEmpty());		
+		assertTrue(tableau.canPush(card));
+		moveController.move(waste,tableau);	
+		numberTableauCards = tableau.size();
+		numberWasteCards = waste.size();
+		assertEquals(numberWasteCards+1,tableau.size());
+		assertEquals(numberTableauCards-1,waste.size());
 
+		//One score lower card in Waste that tableau (same color)	
+		
 
+		//One score lower card in Waste that tableau (different color)
+		
 
 	}
 
