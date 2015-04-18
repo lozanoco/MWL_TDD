@@ -6,4 +6,8 @@ public class StartController {
 		return 24;
 	}
 
+	public int sizWaste() {
+		return 0;
+	}
+
 }

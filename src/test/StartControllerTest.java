@@ -23,6 +23,7 @@ public class StartControllerTest {
     
     @Test
     public void getSizeWasteTest() {
+    	assertEquals(24, startController.sizWaste());
     }
     
     
