@@ -15,11 +15,10 @@ public class Foundation extends Stack<Card>{
 	}
 
 	public boolean canPush(Card card) {
-		if(this.isEmpty() && card.isFirst()){
-			return true;
-		} 
-		Card topCard = this.peek();
-		if(card.isSameColor(topCard) && card.isNext(topCard)){
+		if(this.isEmpty()){
+			if(card.isFirst())return true;
+		}
+		else if(card.isSameColor(this.peek()) && card.isNext(this.peek())){
 			return true;
 		}
 		return false;		

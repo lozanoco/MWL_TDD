@@ -22,8 +22,7 @@ public class Card {
 	}
 
 	public boolean isNext(Card topCard) {
-		// TODO Auto-generated method stub
-		return true;
+		return this.value == topCard.getValue()+1;
 	}
 
 	public Suit getSuit() {
