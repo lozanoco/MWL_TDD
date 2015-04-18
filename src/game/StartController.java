@@ -3,6 +3,7 @@ package game;
 import java.util.ArrayList;
 
 public class StartController {
+	
 
 	public int sizeDeck() {		
 		return 24;
@@ -23,13 +24,13 @@ public class StartController {
 
 	public ArrayList<Tableau> getTableaus() {
 		ArrayList<Tableau> tableaus = new ArrayList<Tableau>();
-		tableaus.add(new Tableau());
-		tableaus.add(new Tableau());
-		tableaus.add(new Tableau());
-		tableaus.add(new Tableau());
-		tableaus.add(new Tableau());
-		tableaus.add(new Tableau());
-		tableaus.add(new Tableau());
+		tableaus.add(new Tableau(1));
+		tableaus.add(new Tableau(2));
+		tableaus.add(new Tableau(3));
+		tableaus.add(new Tableau(4));
+		tableaus.add(new Tableau(5));
+		tableaus.add(new Tableau(6));
+		tableaus.add(new Tableau(7));
 		return tableaus;
 	}
 

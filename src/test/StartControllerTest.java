@@ -56,5 +56,23 @@ public class StartControllerTest {
     		}
     	
 		}
-	
+    
+    @Test
+    public void getTotalCardsTest() {
+    	 int total=0;
+    	Tableau tableau;
+    	Foundation foundation;
+    	 total+=startController.sizeDeck()+startController.sizWaste();
+    	 ArrayList<Tableau> tableaus = startController.getTableaus();
+    	 for(int i=0; i< tableaus.size();i++){
+    		 tableau=tableaus.get(i);
+    		 total+=tableau.getSize();
+    	 }
+    	 ArrayList<Foundation> foundations = startController.getFoundations();
+    	 for(int i=0; i< foundations.size();i++){
+    		 foundation=foundations.get(i);
+     		 total+=foundation.getCardsNumber();
+    	 }
+    	 assertEquals(52, total);
+    }
 }
