@@ -3,11 +3,13 @@ package game;
 import java.util.Stack;
 
 public class Foundation extends Stack<Card>{
+	
+	private Suit suit;
 
 	private static final long serialVersionUID = 9209042459856939280L;
 
 	public Foundation(Suit suit) {
-		// TODO Auto-generated constructor stub
+		this.suit=suit;
 	}
 
 	public int getCardsNumber(){
@@ -15,6 +17,7 @@ public class Foundation extends Stack<Card>{
 	}
 
 	public boolean canPush(Card card) {
+		if(this.suit!=card.getSuit())return false;
 		if(this.isEmpty()){
 			if(card.isFirst())return true;
 		}

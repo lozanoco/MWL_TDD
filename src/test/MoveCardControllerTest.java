@@ -1,6 +1,8 @@
 package test;
 
 import static org.junit.Assert.*;
+
+
 import game.Card;
 import game.Foundation;
 import game.MoveCardController;
@@ -44,11 +46,46 @@ public class MoveCardControllerTest {
 		foundation = new Foundation(Suit.CLUBS);	
 		assertFalse(waste.isEmpty());
 		assertFalse(foundation.canPush(card));
+		moveController.move(waste,foundation);
 		numberCardsWaste = waste.size();
 		numberCardsFoundation = foundation.size();
 		assertEquals(numberCardsWaste,waste.size());
 		assertEquals(numberCardsFoundation,foundation.size());
+
+		//Waste card  no consecutive to Foundation card
+		card = new Card(1,Suit.CLUBS);
+		waste = new Waste();
+		waste.push(card);		
+		foundation = new Foundation(Suit.CLUBS);	
+		moveController.move(waste,foundation);
 		
+		card = new Card(5,Suit.CLUBS);
+		waste.push(card);		
+		assertFalse(waste.isEmpty());
+		assertFalse(foundation.canPush(card));
+		moveController.move(waste,foundation);
+		numberCardsWaste = waste.size();
+		numberCardsFoundation = foundation.size();
+		assertEquals(numberCardsWaste,waste.size());
+		assertEquals(numberCardsFoundation,foundation.size());
+
+		//Waste card consecutive to Foundation card but different suit
+		card = new Card(1,Suit.CLUBS);
+		waste = new Waste();
+		waste.push(card);		
+		foundation = new Foundation(Suit.CLUBS);		
+		moveController.move(waste,foundation);
+		
+		card = new Card(2,Suit.DIAMONDS);
+		waste.push(card);		
+		assertFalse(waste.isEmpty());
+		assertFalse(foundation.canPush(card));
+		moveController.move(waste,foundation);
+		numberCardsWaste = waste.size();
+		numberCardsFoundation = foundation.size();
+		assertEquals(numberCardsWaste,waste.size());
+		assertEquals(numberCardsFoundation,foundation.size());
+
 	}
 
 	@Test

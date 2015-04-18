@@ -7,7 +7,7 @@ public class Card {
 	private Suit suit;
 	private int value;
 
-	public Card(int value, Suit clubs) {
+	public Card(int value, Suit suit) {
 		this.value=value;
 		this.suit=suit;
 	}
