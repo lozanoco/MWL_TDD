@@ -4,7 +4,7 @@ import game.utils.Suit;
 
 import java.util.Stack;
 
-public class Foundation extends Stack<Card>{
+public class Foundation extends GameStack{
 	
 	private Suit suit;
 
@@ -17,7 +17,8 @@ public class Foundation extends Stack<Card>{
 	public int getCardsNumber(){
 		return 0;		
 	}
-
+	
+	@Override
 	public boolean canPush(Card card) {
 		if(this.suit!=card.getSuit())return false;
 		if(this.isEmpty()){

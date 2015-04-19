@@ -1,9 +1,8 @@
 package game.models;
 
-import java.util.Stack;
 
 
-public class Tableau extends Stack<Card>{
+public class Tableau extends GameStack{
 
 	private static final long serialVersionUID = 9080665846640002421L;
 	
@@ -32,7 +31,8 @@ public class Tableau extends Stack<Card>{
 	public void setSize(int size) {
 		this.size = size;
 	}
-
+	
+	@Override
 	public boolean canPush(Card card) {
 		if(this.isEmpty()){
 			if(card.isRoi())return true;
@@ -42,6 +42,5 @@ public class Tableau extends Stack<Card>{
 		}
 		return false;
 	}
-
 
 }
