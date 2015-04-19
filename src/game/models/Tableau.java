@@ -37,7 +37,7 @@ public class Tableau extends GameStack{
 		if(this.isEmpty()){
 			if(card.isRoi())return true;
 		}
-		else if(!card.isSameColor(this.peek()) && card.isPrevious(this.peek())){
+		else if(!card.getSuit().isSameColor(this.peek().getSuit()) && card.isPrevious(this.peek())){
 			return true;
 		}
 		return false;

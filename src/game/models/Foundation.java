@@ -22,7 +22,7 @@ public class Foundation extends GameStack{
 		if(this.isEmpty()){
 			if(card.isFirst())return true;
 		}
-		else if(card.isSameColor(this.peek()) && card.isNext(this.peek())){
+		else if(card.getSuit().isSameColor(this.peek().getSuit()) && card.isNext(this.peek())){
 			return true;
 		}
 		return false;		
