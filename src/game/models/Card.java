@@ -1,5 +1,6 @@
 package game.models;
 
+import game.utils.Color;
 import game.utils.Suit;
 
 public class Card {
@@ -20,14 +21,16 @@ public class Card {
 		return this.value==1;
 	}
 
-	public boolean isSameColor(Card card) {
-		if((card.suit.equals(Suit.CLUBS) || card.suit.equals(Suit.SPADES)) 
-				&& (this.suit.equals(Suit.CLUBS)||this.suit.equals(Suit.SPADES))) return true;
-		if((card.suit.equals(Suit.HEARTS) ||card.suit.equals(Suit.DIAMONDS)) 
-				&& (this.suit.equals(Suit.HEARTS)||this.suit.equals(Suit.DIAMONDS))) return true;
-		return false;
+	public boolean isSameColor(Card card) {		
+		return this.getColor()==card.getColor();
 	}
 	
+	private Color getColor() {
+		if(this.suit.equals(Suit.CLUBS) || this.suit.equals(Suit.SPADES))  return Color.BLACK;
+		if(this.suit.equals(Suit.HEARTS) || this.suit.equals(Suit.DIAMONDS))  return Color.RED;
+		return null;
+	}
+
 	public boolean isCovered() {
 		return this.covered;
 	}

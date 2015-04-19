@@ -2,8 +2,6 @@ package game.models;
 
 import game.utils.Suit;
 
-import java.util.Stack;
-
 public class Foundation extends GameStack{
 	
 	private Suit suit;

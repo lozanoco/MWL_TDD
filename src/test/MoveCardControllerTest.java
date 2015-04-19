@@ -26,7 +26,7 @@ public class MoveCardControllerTest {
 	public void moveFromWasteToFoundationTest(){
 
 		//No cards in foundation & A in waste 
-		Card card = new Card(1,Suit.CLUBS);
+		Card card = new Card(1, Suit.CLUBS);
 		Waste waste = new Waste();
 		waste.push(card);		
 		Foundation foundation = new Foundation(Suit.CLUBS);	
