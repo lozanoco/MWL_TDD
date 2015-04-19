@@ -7,6 +7,7 @@ import java.util.Stack;
 
 public class StartController {
 	
+	private int MAX_NUM_TABLEAUS=7;
 	private Deck deck;
 	private Waste waste;
 	private List<Tableau> tableaus;
@@ -46,7 +47,7 @@ public class StartController {
 				allCards.remove(randomOrder);
 			}				
 		}
-		for(int i=0;i<7;i++){
+		for(int i=0;i<MAX_NUM_TABLEAUS;i++){
 			while(tableaus.get(i).size()!=i+1){
 				int randomOrder = random.nextInt(allCards.size());
 				if(allCards.get(randomOrder)!=null){
