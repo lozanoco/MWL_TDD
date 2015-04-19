@@ -10,7 +10,7 @@ public class Tableau extends Stack<Card>{
 	private int size;
 	
 	public Tableau() {
-		
+	
 	}
 
 	public Tableau(int i) {

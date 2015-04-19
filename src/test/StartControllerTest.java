@@ -3,6 +3,7 @@ package test;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import game.Foundation;
 import game.StartController;
@@ -35,7 +36,7 @@ public class StartControllerTest {
     @Test
     public void getFoundationsTest() {
     	Foundation foundation;
-    	ArrayList<Foundation> foundations = startController.getFoundations();
+    	List<Foundation> foundations = startController.getFoundations();
     	assertEquals(4, foundations.size());
     	for(int i=0; i< foundations.size();i++){
     		foundation=foundations.get(i);
@@ -47,7 +48,7 @@ public class StartControllerTest {
     @Test
     public void getTableauTest() {
     	Tableau tableau;
-    	ArrayList<Tableau> tableaus = startController.getTableaus();
+    	List<Tableau> tableaus = startController.getTableaus();
     	assertEquals(7, tableaus.size());
     	for(int i=0; i< tableaus.size();i++){
     		tableau=tableaus.get(i);
@@ -63,12 +64,12 @@ public class StartControllerTest {
     	Tableau tableau;
     	Foundation foundation;
     	 total+=startController.sizeDeck()+startController.sizWaste();
-    	 ArrayList<Tableau> tableaus = startController.getTableaus();
+    	 List<Tableau> tableaus = startController.getTableaus();
     	 for(int i=0; i< tableaus.size();i++){
     		 tableau=tableaus.get(i);
     		 total+=tableau.getSize();
     	 }
-    	 ArrayList<Foundation> foundations = startController.getFoundations();
+    	 List<Foundation> foundations = startController.getFoundations();
     	 for(int i=0; i< foundations.size();i++){
     		 foundation=foundations.get(i);
      		 total+=foundation.getCardsNumber();

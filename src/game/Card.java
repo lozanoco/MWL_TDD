@@ -6,10 +6,12 @@ public class Card {
 	public static final int MAX_VALUE = 13;
 	private Suit suit;
 	private int value;
+	private boolean covered;
 
 	public Card(int value, Suit suit) {
 		this.value=value;
 		this.suit=suit;
+		this.covered=true;
 	}
 
 	public boolean isFirst() {
@@ -23,6 +25,14 @@ public class Card {
 				&& (this.suit.equals(Suit.HEARTS)||this.suit.equals(Suit.DIAMONDS))) return true;
 		return false;
 	}
+	
+	public boolean isCovered() {
+		return this.covered;
+	}
+	
+	public void setCovered(boolean value) {
+		this.covered=value;
+	}	
 
 	public boolean isNext(Card card) {
 		return this.value == card.getValue()+1;
