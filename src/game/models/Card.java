@@ -61,14 +61,6 @@ public class Card {
 		return this.value == 13;
 	}
 
-	public boolean isDifferentColor(Card card) {
-		if((card.suit.equals(Suit.CLUBS) || card.suit.equals(Suit.SPADES)) 
-				&& (this.suit.equals(Suit.HEARTS)||this.suit.equals(Suit.DIAMONDS))) return true;
-		if((card.suit.equals(Suit.HEARTS) ||card.suit.equals(Suit.DIAMONDS)) 
-				&& (this.suit.equals(Suit.CLUBS)||this.suit.equals(Suit.CLUBS))) return true;
-		return false;
-	}
-
 	public boolean isPrevious(Card card) {
 		return this.value == card.getValue()-1;
 	}
