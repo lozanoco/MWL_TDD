@@ -28,13 +28,11 @@ public class StartController {
 			tableaus.add(new Tableau(i+1));
 		}
 		generateCards(deck,tableaus);
-
 		foundations = new ArrayList<Foundation>();
 		foundations.add(new Foundation(Suit.CLUBS));
 		foundations.add(new Foundation(Suit.SPADES));
 		foundations.add(new Foundation(Suit.DIAMONDS));
 		foundations.add(new Foundation(Suit.HEARTS));
-
 
 	}
 

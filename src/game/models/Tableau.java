@@ -1,7 +1,5 @@
 package game.models;
 
-
-
 public class Tableau extends GameStack{
 
 	private static final long serialVersionUID = 9080665846640002421L;
@@ -42,5 +40,4 @@ public class Tableau extends GameStack{
 		}
 		return false;
 	}
-
 }

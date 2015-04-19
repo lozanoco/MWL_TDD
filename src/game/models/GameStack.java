@@ -7,5 +7,5 @@ public abstract class GameStack extends Stack<Card>{
 	private static final long serialVersionUID = 1L;
 
 	public abstract boolean canPush(Card card);
-	
+
 }

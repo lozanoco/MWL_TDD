@@ -1,6 +1,5 @@
 package game.models;
 
-
 public class Deck extends GameStack{
 
 	private static final long serialVersionUID = 2228551544830936537L;

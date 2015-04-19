@@ -9,6 +9,4 @@ public class Waste extends GameStack{
 		if(!card.isCovered()) return true;
 		return false;
 	}
-
-
 }

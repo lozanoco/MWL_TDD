@@ -1,6 +1,5 @@
 package game.models;
 
-import game.utils.Color;
 import game.utils.Suit;
 
 public class Card {
@@ -24,7 +23,7 @@ public class Card {
 	public boolean isCovered() {
 		return this.covered;
 	}
-	
+
 	public void setCovered(boolean value) {
 		this.covered=value;
 	}	

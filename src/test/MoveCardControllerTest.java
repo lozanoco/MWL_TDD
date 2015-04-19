@@ -19,7 +19,6 @@ public class MoveCardControllerTest {
 	@Before
 	public void before(){
 		moveController = new MoveCardController();
-
 	}
 
 	@Test
@@ -85,7 +84,6 @@ public class MoveCardControllerTest {
 		numberCardsFoundation = foundation.size();
 		assertEquals(numberCardsWaste,waste.size());
 		assertEquals(numberCardsFoundation,foundation.size());
-
 	}
 
 	@Test
@@ -104,7 +102,6 @@ public class MoveCardControllerTest {
 		assertEquals(numberDeckCards-1,deck.size());
 		assertEquals(numberWasteCards+1,waste.size());
 		assertEquals(card,waste.peek());
-
 
 		//Two cards in Deck
 		deck = new Deck();
@@ -129,7 +126,6 @@ public class MoveCardControllerTest {
 		assertEquals(numberDeckCards-1,deck.size());
 		assertEquals(numberWasteCards+1,waste.size());
 		assertEquals(card,waste.peek());
-
 
 		//Three cards in Deck
 		deck = new Deck();
@@ -168,7 +164,7 @@ public class MoveCardControllerTest {
 
 	@Test
 	public void moveFromWasteToTableauTest(){
-		
+
 		//No cards in Tableau, score card different to ROI in Waste
 		Card card = new Card(1,Suit.CLUBS);
 		Waste waste = new Waste();
@@ -224,8 +220,5 @@ public class MoveCardControllerTest {
 		numberWasteCards = waste.size();
 		assertEquals(numberWasteCards,tableau.size());
 		assertEquals(numberTableauCards,waste.size());
-		
-
 	}
-
 }
