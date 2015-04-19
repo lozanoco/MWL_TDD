@@ -1,13 +1,13 @@
 package test;
 
 import static org.junit.Assert.*;
-import game.Card;
-import game.Deck;
-import game.Foundation;
-import game.MoveCardController;
-import game.Suit;
-import game.Tableau;
-import game.Waste;
+import game.controllers.MoveCardController;
+import game.models.Card;
+import game.models.Deck;
+import game.models.Foundation;
+import game.models.Tableau;
+import game.models.Waste;
+import game.utils.Suit;
 
 import org.junit.Before;
 import org.junit.Test;

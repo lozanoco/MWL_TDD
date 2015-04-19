@@ -5,9 +5,9 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import game.Foundation;
-import game.StartController;
-import game.Tableau;
+import game.controllers.StartController;
+import game.models.Foundation;
+import game.models.Tableau;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -1,4 +1,6 @@
-package game;
+package game.models;
+
+import game.utils.Suit;
 
 public class Card {
 

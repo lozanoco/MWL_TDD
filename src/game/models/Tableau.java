@@ -1,4 +1,4 @@
-package game;
+package game.models;
 
 import java.util.Stack;
 
@@ -18,7 +18,7 @@ public class Tableau extends Stack<Card>{
 	}
 
 	public boolean isFirstCardCovered() {
-		return false;
+		return this.peek().isCovered();
 	}
 
 	public boolean isSecondAndRestCardsCovered() {

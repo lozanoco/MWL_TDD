@@ -1,4 +1,4 @@
-package game;
+package game.utils;
 
 public enum Suit {
 	HEARTS, DIAMONDS, CLUBS, SPADES;	

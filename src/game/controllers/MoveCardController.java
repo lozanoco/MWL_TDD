@@ -1,4 +1,9 @@
-package game;
+package game.controllers;
+
+import game.models.Deck;
+import game.models.Foundation;
+import game.models.Tableau;
+import game.models.Waste;
 
 public class MoveCardController {
 
